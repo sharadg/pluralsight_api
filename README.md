@@ -3,6 +3,15 @@ Pluralsight Reporting API - Python Client
 
 Simple python program to download reporting data from [Pluralsight API](https://app.pluralsight.com/plans/api/reports/docs). You need to have python3 installed alongwith optional packages (requests, argparse). 
 
+Before using the program, please set couple of environment variables PLURALSIGHT_PLAN_ID and PLURALSIGHT_TOKEN_ID. You can find the values of these variables from your plan administration screen (https://app.pluralsight.com/plans/account/<plan_id>/integrations)
+
+```/bin/bash
+export PLURALSIGHT_PLAN_ID=<plan_id>
+export PLURALSIGHT_TOKEN_ID=<token_id>
+```
+
+## Usage for python script
+
 ```
 usage: reporting_api.py [-h] [-d [DELTA_DAYS]] [-s [START_DATE]]
                         [-e [END_DATE]] [-u] [-c] [-g]
