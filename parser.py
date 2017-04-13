@@ -15,16 +15,18 @@ def build_parser():
 
     parser = argparse.ArgumentParser(description='Python script for interacting with Pluralsight Reporting APIs')
 
-    date_group = parser.add_argument_group('Reporting Period', 'Start and End dates to pull the data for')
-    date_group.add_argument("-d", "--delta_days", help="Incremental data based on last X days (default 1)",
+    parser.add_argument("-o", "--output_folder", help="Path to where the data files will go (default: current folder)")
+
+    date_group = parser.add_argument_group("Reporting Period", "Start and End dates to pull the data for")
+    date_group.add_argument("-d", "--delta_days", help="Incremental data based on last X days (default: 1)",
                             nargs='?', const=1, type=int)
     date_group.add_argument("-s", "--start_date", help="Filter records by specifying start date in mm-dd-yyyy format",
                             nargs='?', default=default_start_date, const=default_start_date, type=mk_date)
     date_group.add_argument("-e", "--end_date", help="Filter records by specifying end date in mm-dd-yyyy format",
                             nargs='?', default=default_end_date, const=default_end_date, type=mk_date)
 
-    objects_group = parser.add_argument_group('Asset types to pull',
-                                              'Choice of assets to pull: Users, Course Completion, Course Usage')
+    objects_group = parser.add_argument_group("Asset types to pull",
+                                              "Choice of assets to pull: Users, Course Completion, Course Usage")
     objects_group.add_argument("-u", "--users",
                                help="Get All Users (note: start_date and end_date have no effect on this option)",
                                action="store_true", default=False)
