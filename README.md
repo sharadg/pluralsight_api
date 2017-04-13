@@ -36,7 +36,7 @@ Asset types to pull:
 ```
 
 ## Examples of script usage:
-1. Download last 30 days worth of data from users, course completion and course usage APIs.
+### Download last 30 days worth of data from users, course completion and course usage APIs.
 
 ```
 python reporting_api.py -d 30 -u -c -g
@@ -46,7 +46,7 @@ Pulling course completion
 Pulling course usage
 ```
 
-2. Download data from course completion APIs based on specific start and end dates.
+### Download data from course completion APIs based on specific start and end dates.
 
 ```
 python reporting_api.py -s 01-01-2017 -e 03-01-2017 -c
@@ -54,7 +54,7 @@ Pulling Pluralsight Reporting data starting from 2017-01-01 and ending at 2017-0
 Pulling course completion
 ```
 
-3. Download all available data (last 1 year) from users, course completion and course usage APIs.
+### Download all available data (last 1 year) from users, course completion and course usage APIs.
 ```
 python reporting_api.py -ucg
 Pulling Pluralsight Reporting data starting from 2016-04-12 and ending at 2017-04-12
